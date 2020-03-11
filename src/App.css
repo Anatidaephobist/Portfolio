@@ -1,32 +1,476 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.body{
+  padding-top:25vh;
+  background-color: black;
+  user-select: none;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  max-height: 100%;
+  overflow: hidden;
+}
+
+body h2 {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+body h1 {
+  color: #ffffff;
+  margin-left:1vw;
+  margin-top: 1vh;
+  margin-bottom:5vh;
+  font-size: 1.5rem;
+  z-index: 2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+a {
+  color:white;
+}
+
+.content {
+  transition: 2s;
+  max-width:80vw;
+  padding-left:20vw;
+  padding-right:20vw;
+  color: rgba(255, 255, 255, 0.603);
+  font-style: italic;
+  padding-top:5vh;
+  background-color: #ffffff00;
+  border-top-left-radius:inherit;
+  border-top-right-radius:inherit;
+  text-align: center;
+  margin-bottom:10vh;
+}
+
+.projectName {
+  pointer-events: none;
+}
+
+.projectContainer img {
+  margin-top:5vh;
+  transition: 2s;
+  border: 2px solid silver;
+  border-radius: 5%;
+  max-width:90%;
+  max-height:40vh;
+  
+}
+
+.projectLink {
+  transition: 2s;
+  position: absolute;
+   z-index: 6;
+   top:35vh;
+   right:40vw;
+   color:white;
+  
+}
+
+
+.projectButton {
+ background-image: url("/pics/space.jpg");
+   border: 1px solid black;
+   background-size:cover;
+   margin-top:5vh;
+   transition: 0.5s;
+   border-radius: 50px;
+   height:50px;
+   width: 50px;
+   outline: none;
+   z-index: 1;
+   padding:5px;
+   display: flex;
+  justify-content: center;
+ }
+
+ .opacity-0 {
+   transition: 0.1s;
+   pointer-events: none;
+   filter:opacity(0);
+ }
+
+ .minimizeTitle {
+   transform: scale(0);
+   transition:all 0.5s;
+ }
+
+ .projectTitle {
+  filter: opacity(0);
+  color:white;
+  left:100px;
+  top:-20px;
+  transition: all 0.5;
+ 
+}
+
+ .projectButton h2, .minimize h2 {
+   min-width: 230px;
+  position: relative;
+  top:-30px;  
+  left:20px;
+  margin:0;
+  color: #ffffff;
+  font-size: 0.9em;
+ }
+
+
+
+.activeElement {
+position: absolute;
+background-color: black;
+top:1vh;
+padding:0;
+width: 80vw;
+height:82vh;
+pointer-events: none;
+border-radius: 20px;
+z-index: 4;
+}
+
+.borderActive {
+  border: 2px solid #ffffff70;
+
+}
+
+#mediastream-audio {
+position: absolute;
+}
+
+
+.contentWrapper {
+  border-radius: inherit;
+  overflow: hidden;
+  height: auto;
+  min-height: 70vh;
+
+}
+
+
+
+.activeContentContainer  {
+    
+  display:block;
+  filter: opacity(0.9);
+  background-color: inherit;
+  position: absolute;
+  width:inherit;
+  height: inherit;
+}
+
+.titleTop {
+ transform: translate(-35vw,-25vh);
+}
+
+.myName {
+  transition: 2s;
+}
+
+.activeElement h2{
+  filter: opacity(0);
   }
-  to {
-    transform: rotate(360deg);
+  
+.activeElement h3{
+    transition: 1.5s;
+    position: relative;
+    top:-50px;
+    filter: opacity(1);
+    }
+
+.moveDown {
+  transition: 1s;
+  transform: translateY(52vh);
+}
+
+ 
+
+ .minimize{
+   transform: scale(0.1);
+   background-image: url("/pics/space.jpg");
+   border: 1px solid black;
+   background-size:cover;
+   margin-top:5vh;
+   margin-left:1vw;
+   transition: 0.5s;
+   border-radius: 50px;
+   height:50px;
+   width: 50px;
+   outline: none;
+   z-index: 3;
+   padding:5px;
+   text-align: center;
+  
+ }
+
+ 
+ 
+.projectButton:hover {
+  z-index: 2;
+  filter: saturate(3);
+ transition: 1s;
+ box-shadow: 0 -10px 5px -5px #ffffff02 inset,
+              0 10px 5px -5px #ffffff1e inset,
+              0 0 30px #0f3955;
+}
+
+
+
+.projectWrapper  {
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+
+.text-align-center {
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+
+@keyframes move-background {
+  from {
+		-webkit-transform: translate3d(0px, 0px, 0px);
+	}
+	to { 
+		-webkit-transform: translate3d(1000px, 0px, 0px);
+	}
+}
+@-webkit-keyframes move-background {
+  from {
+		-webkit-transform: translate3d(0px, 0px, 0px);
+	}
+	to { 
+		-webkit-transform: translate3d(1000px, 0px, 0px);
+	}
+}
+
+@-moz-keyframes move-background {    
+	from {
+		-webkit-transform: translate3d(0px, 0px, 0px);
+	}
+	to { 
+		-webkit-transform: translate3d(1000px, 0px, 0px);
+	}
+}
+
+    @-webkit-keyframes move-background {
+	from {
+		-webkit-transform: translate3d(0px, 0px, 0px);
+	}
+	to { 
+		-webkit-transform: translate3d(1000px, 0px, 0px);
+	}
+}
+
+
+
+.stars {
+ background: black url("/pics/stars.png") repeat;
+ position: absolute;
+ background-size: contain;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: block;
+  	z-index: -2;
+}
+
+
+.display-none {
+  display:none;
+}
+
+.twinkling{
+	width:10000px;
+  background: transparent url("/pics/twinkling.png") repeat;
+	background-size: contain;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  -moz-animation:move-background 70s linear infinite;
+  -ms-animation:move-background 70s linear infinite;
+  -o-animation:move-background 70s linear infinite;
+  -webkit-animation:move-background 70s linear infinite;
+  animation:move-background 70s linear infinite;
+}
+
+@media screen and (max-width: 2600px) {
+  .projectLink {
+    top:20vh;
+    left:40vw;
+  }
+  .activeElement .projectTitle {
+    top:-6vh;
+    left:-30vw;
   }
 }
+
+@media screen and (max-width: 1500px) {
+ .content {
+   padding-left:10vw;
+   padding-right:10vw;
+    font-size: 0.85em;
+ }
+  a {
+    font-size: 0.85em;
+  }
+  .projectLink {
+    top:20vh;
+    left:40vw;
+  }
+}
+@media screen and (max-width: 1370px) {
+  .projectLink {
+    top:20vh;
+  }
+
+  .activeElement .projectTitle {
+    top:-6vh;
+    left:-30vw;
+  }
+  
+   }
+
+
+
+
+@media screen and (max-width: 900px)  {
+  .content {
+  padding-left: 5vw;
+  padding-right:5vw;
+  }
+
+  .projectTitle {
+  z-index: 6;
+  }
+ }
+
+ @media screen and (max-width: 725px) {
+  .content {
+  font-size: 0.75em;
+  }
+
+  a {
+    font-size: 0.75em;
+  }
+
+  .projectTitle {
+    left:0vw;
+  }
+ }
+
+ @media screen and (max-width: 700px) {
+  .projectContainer {
+    width: 100%;
+    }
+
+    .titleTop {
+      transform: translate(-25vw,-25vh);
+    }
+}
+
+@media screen and (max-width: 650px), screen and (min-height: 700px) {
+  .projectTitle {
+    font-size: 0.8em;
+    margin-top:10vh;
+    z-index: 5;
+    left:-20vw;
+  }
+}
+
+@media screen and (max-width: 570px) {
+ 
+.projectButton h2 {
+  font-size: 0.8rem;
+}
+
+.projectLink {
+  top:25vh;
+}
+}
+
+@media screen and (max-width: 520px) {
+ 
+  .projectButton h2 {
+    font-size: 0.7rem;
+  }
+  .titleTop {
+    transform: translate(-5vw,-25vh);
+   }
+  }
+
+  @media screen and (max-width: 450px) {
+ 
+    .projectButton h2 {
+      font-size: 0.6rem;
+     transform: translateY(1vh);
+    }
+
+   .activeElement .projectTitle {
+    min-width: 200px;
+    }
+    }
+
+    @media screen and (max-width: 370px) {
+      .projectButton h2 {
+        font-size: 0.5rem;
+       transform: translateY(1vh);
+      }
+      }
+      @media screen and (max-height: 650px) {
+        .projectWrapper img {
+          max-width:90%;
+          max-height:35vh;
+        }
+
+        .projectLink {
+        font-size: 0.8rem;
+        }
+      }
+
+      @media screen and (max-height: 600px) {
+        .titleTop {
+          font-size: 0.9em;
+          
+          margin-bottom:40px;
+        }
+
+        .activeElement .projectTitle {
+         font-size: 0.9rem;
+         margin-top:8vh;
+          }
+
+          .content {
+            font-size: 0.6em;
+          }
+        }
+          @media screen and (max-height: 380px) {
+            .projectWrapper img {
+              max-width:90%;
+              max-height:35vh;
+            }
+
+            .projectLink {
+              top:30vh;
+              font-size: 0.5rem;
+            }
+            }
+          
+      
+    
+  
+
+
+
+ 
+
+
+

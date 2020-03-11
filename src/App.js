@@ -1,50 +1,27 @@
-import React, { Component } from "react"
-import logo from "./logo.svg"
-import "./App.css"
 
-class LambdaDemo extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { loading: false, msg: null }
-  }
+import React from "react";
+import './App.css';
 
-  handleClick = api => e => {
-    e.preventDefault()
+import {ProjectItem, GetContentProject} from './projectItemLogic.js';
 
-    this.setState({ loading: true })
-    fetch("/.netlify/functions/" + api)
-      .then(response => response.json())
-      .then(json => this.setState({ loading: false, msg: json.msg }))
-  }
+function Portfolio() {
+  return(  
+<div>
+  
+  <div className="text-align-center">
+  <h1 className="myName" >Joni Mustaniemi</h1>
+  <div className="projectWrapper">
 
-  render() {
-    const { loading, msg } = this.state
+   <ProjectItem name="Chat Demo" projectImage="./pics/datachannelDemo.png" content={<GetContentProject project="Datachannel"/>}/>
+   <ProjectItem name="Audio Demo" projectImage="./pics/audioDemo.png" content={<GetContentProject project="Audio"/>}/>
+   <ProjectItem name="Screen Demo" projectImage="./pics/screenDemo.png" content={<GetContentProject project="Screensharing"/>}/>
 
-    return (
-      <p>
-        <button onClick={this.handleClick("hello")}>{loading ? "Loading..." : "Call Lambda"}</button>
-        <button onClick={this.handleClick("async-dadjoke")}>{loading ? "Loading..." : "Call Async Lambda"}</button>
-        <br />
-        <span>{msg}</span>
-      </p>
-    )
-  }
+  </div>
+  </div>
+  
+</div>
+
+  );
 }
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <LambdaDemo />
-        </header>
-      </div>
-    )
-  }
-}
-
-export default App
+export default Portfolio;
